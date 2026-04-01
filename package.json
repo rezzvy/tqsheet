@@ -1,0 +1,35 @@
+{
+  "name": "tqsheet",
+  "version": "1.0.0",
+  "description": "Query, fetch, and export Google Sheets data without any setup using GViz API.",
+  "main": "dist/tqsheet.node.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rezzvy/tqsheet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rezzvy/tqsheet/issues"
+  },
+  "homepage": "https://github.com/rezzvy/tqsheet#readme",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build:browser": "esbuild ./src/tqsheet.js --bundle --minify --platform=browser --format=iife --global-name=TqSheet --outfile=dist/tqsheet.min.js",
+    "build:node": "esbuild ./src/tqsheet.js --bundle --minify --platform=node --format=cjs --outfile=dist/tqsheet.node.js",
+    "build": "npm run build:browser && npm run build:node",
+    "test": "node --test"
+  },
+  "keywords": [
+    "google-sheets",
+    "gviz",
+    "spreadsheet",
+    "fetch"
+  ],
+  "author": "rezzvy",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "esbuild": "^0.27.4"
+  }
+}
