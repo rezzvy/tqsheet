@@ -6,7 +6,7 @@ const testUrl = 'https://docs.google.com/spreadsheets/d/1-aoJ48IO31blJEW-0lzNj28
 
 test('[RAW] Fetching data with query', async () => {
     const query = "SELECT * WHERE A = 'Dharma'";
-    const result = await TqSheet.raw(testUrl, query);
+    const result = await TqSheet.raw(testUrl, { query: query });
 
     assert.ok(result.table, 'Should return the built-in gviz table object');
     const rawRows = result.table.rows;

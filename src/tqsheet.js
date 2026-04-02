@@ -29,8 +29,9 @@ class TqSheet {
         return { data: { columns, rows }, message: response.message };
     }
 
-    static async raw(url, query) {
-        return await this.#fetchData(url, { query, isRaw: true });
+
+    static async raw(url, { query, sheet } = {}) {
+        return await this.#fetchData(url, { sheet, query, isRaw: true });
     }
 
     static async export(url, type = "csv", sheetName) {
